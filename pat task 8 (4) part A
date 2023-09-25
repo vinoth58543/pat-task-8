@@ -1,0 +1,35 @@
+class TV:
+    def _init_(self, brand, inches, price):
+        self.brand = brand
+        self.channel = 1
+        self.price = price
+        self.inches = inches
+        self.isOn = False
+        self.volume = 50
+
+    def increase_volume(self):
+        if self.isOn and self.volume < 100:
+            self.volume += 1
+     def decrease_volume(self):
+        if self.isOn and self.volume > 0:
+            self.volume -= 1
+
+    def set_channel(self, new_channel):
+        if self.isOn and 1 <= new_channel <= 50:
+            self.channel = new_channel
+
+    def reset_tv(self):
+        self.channel = 1
+        self.volume = 50
+ def status(self):
+        if self.isOn:
+            return f"{self.brand} at channel {self.channel}, volume {self.volume}"
+        else:
+            return f"{self.brand} is off"
+
+# Example usage:
+panasonic_tv = TV("Panasonic", 55, 800)
+panasonic_tv.isOn = True
+panasonic_tv.set_channel(8)
+panasonic_tv.increase_volume()
+print(panasonic_tv.status())
