@@ -1,0 +1,7 @@
+smart_tv = SmartTV("Samsung", 65, 1200, 0.5, 120, 10, 120)
+smart_tv.isOn = True
+smart_tv.set_channel(12)
+smart_tv.increase_volume()
+print(smart_tv.display_details())
+print(smart_tv.viewing_angle())
+print(smart_tv.backlight())
