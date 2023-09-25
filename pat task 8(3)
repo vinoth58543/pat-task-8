@@ -1,0 +1,23 @@
+class Circle:
+    # Private class variable
+    __pi = 3.141
+
+    def _init_(self, radius_list):
+        self.radius_list = radius_list
+
+    @classmethod
+    def calculate_area(cls, radius):
+        return cls.__pi * radius * radius
+
+    @classmethod
+    def calculate_perimeter(cls, radius):
+        return 2 * cls.__pi * radius
+
+# Example usage:
+radius_list = [10, 501, 22, 37, 100, 999, 87, 351]
+
+# Calculate and print the areas and perimeters
+for radius in radius_list:
+    area = Circle.calculate_area(radius)
+    perimeter = Circle.calculate_perimeter(radius)
+    print(f"Radius: {radius}, Area: {area}, Perimeter: {perimeter}")
